@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <title>migicMaker</title>
     <link href="./css/magic.min.css" rel="stylesheet">
+    <link href="./lib/leaflet.css" rel="stylesheet">
+    <link href="./css/magicMarker.css" rel="stylesheet">
     <style>
+    html,body,#map{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
     .div{
         position: absolute;
         top:300px;
@@ -13,30 +22,62 @@
         width: 100px;
         height: 100px;
         border-radius: 5px;
-        /*background-color:#ff7473;*/
+        background-color:gold;
     }
     </style>
 </head>
 
 <body>
-    <img class="div magictime slideRight" id='migic' src="./img/map.png"/>
+    <div id="map"></div>
+    <!--<div class="div">
+        <img class="magictime magic" id='migic' src="./img/magicIcon.png" />
+    </div>-->
 
-    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/leaflet.js"></script>
+    <script src="./src/src.js"></script>
     <script>
-        // var ele = document.getElementById('migic');
-        // ele.onclick = function () {
-        //     if (!hasClass(ele, 'magictime twisterInDown')) {
-        //         // ele.className += " " + 'magictime twisterInDown'
-        //     }else{
+        var map = L.map('map').setView([51.505, -0.09], 12);
 
-        //     }
-        // }
-        // function hasClass(obj, cls) {
-        //     return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-        // }
-        // $('.div').click(function () {
-        //     $(this).toggleClass('magictime twisterInDown');
-        // });
+        L.tileLayer('https://api.mapbox.com/styles/v1/jeffmerrick/cihz2gbd400siaikoi4mfn3qb/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamVmZm1lcnJpY2siLCJhIjoiVUVsV3E3ayJ9.cLqSLNQ6IdNDBhzAHVAOAQ').addTo(map);
+
+        L.marker.magic([51.5, -0.09], {
+            iconUrl: './img/magicIcon.png',
+            class: 'twisterInDown',
+            popupAnchor: [-6, -8]
+        })
+            .addTo(map)
+            .bindPopup('MagicMarker');
+
+        var magicArr = [
+            "twisterInDown", "twisterInUp", "swap",
+            "puffIn", "vanishIn",
+            "openDownLeftReturn", "openDownRightReturn", "openUpLeftReturn", "openUpRightReturn",
+            "perspectiveDownReturn", "perspectiveUpReturn", "perspectiveLeftReturn", "perspectiveRightReturn",
+            "slideDownReturn", "slideUpReturn", "slideLeftReturn", "slideRightReturn",
+            "swashIn", "foolishIn",
+            "tinRightIn", "tinLeftIn", "tinUpIn", "tinDownIn",
+            "boingInUp",
+            "spaceInUp", "spaceInRight", "spaceInDown", "spaceInLeft"];
+        var i = 0;
+        var showMagicMarker = setInterval(function () {
+            if (i < 28) {
+                var magicType = magicArr[i];
+
+                L.marker.magic([51.5, -0.35 + i * 0.02], {
+                    iconUrl: './img/magicIcon2.png',
+                    magic: magicType,
+                    popupAnchor: [-6, -8]
+                })
+                    .addTo(map)
+                    .bindTooltip(magicType)
+
+                i++;
+            } else {
+                clearInterval(showMagicMarker);
+            }
+            console.log(i)
+        }, 1000)
+
     </script>
 </body>
 
