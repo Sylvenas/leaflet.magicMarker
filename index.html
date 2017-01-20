@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>migicMaker</title>
-    <link href="./css/magic.min.css" rel="stylesheet">
+    <link href="./lib/magic.min.css" rel="stylesheet">
     <link href="./lib/leaflet.css" rel="stylesheet">
     <link href="./css/magicMarker.css" rel="stylesheet">
     <style>
@@ -15,34 +15,21 @@
         height: 100%;
         width: 100%;
     }
-    .div{
-        position: absolute;
-        top:300px;
-        left: 800px;
-        width: 100px;
-        height: 100px;
-        border-radius: 5px;
-        background-color:gold;
-    }
     </style>
 </head>
 
 <body>
     <div id="map"></div>
-    <!--<div class="div">
-        <img class="magictime magic" id='migic' src="./img/magicIcon.png" />
-    </div>-->
-
     <script src="./lib/leaflet.js"></script>
-    <script src="./src/src.js"></script>
+    <script src="./dist/leaflet.magicMarker.js"></script>
     <script>
         var map = L.map('map').setView([51.505, -0.09], 12);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/jeffmerrick/cihz2gbd400siaikoi4mfn3qb/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamVmZm1lcnJpY2siLCJhIjoiVUVsV3E3ayJ9.cLqSLNQ6IdNDBhzAHVAOAQ').addTo(map);
 
-        L.marker.magic([51.5, -0.09], {
+        L.marker.magic([51.55, -0.09], {
             iconUrl: './img/magicIcon.png',
-            class: 'twisterInDown',
+            magic: 'twisterInDown',
             popupAnchor: [-6, -8]
         })
             .addTo(map)
@@ -63,21 +50,29 @@
             if (i < 28) {
                 var magicType = magicArr[i];
 
-                L.marker.magic([51.5, -0.35 + i * 0.02], {
-                    iconUrl: './img/magicIcon2.png',
-                    magic: magicType,
-                    popupAnchor: [-6, -8]
-                })
-                    .addTo(map)
-                    .bindTooltip(magicType)
+                if (i < 14) {
+                    L.marker.magic([51.58, -0.35 + i * 0.04], {
+                        iconUrl: './img/magicIcon2.png',
+                        magic: magicType,
+                        popupAnchor: [-6, -8]
+                    })
+                        .addTo(map)
+                        .bindTooltip(magicType)
+                } else {
+                    L.marker.magic([51.53, -0.35 + (i - 14) * 0.04], {
+                        iconUrl: './img/magicIcon2.png',
+                        magic: magicType,
+                        popupAnchor: [-6, -8]
+                    })
+                        .addTo(map)
+                        .bindTooltip(magicType)
+                }
 
                 i++;
             } else {
                 clearInterval(showMagicMarker);
             }
-            console.log(i)
         }, 1000)
-
     </script>
 </body>
 

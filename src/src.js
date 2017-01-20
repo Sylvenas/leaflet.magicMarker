@@ -1,11 +1,17 @@
 (function (window) {
+    var setOptions = function (obj, options) {
+        for (var i in options) {
+            obj[i] = options[i];
+        }
+        return obj;
+    };
     L.Icon.Magic = function (options) {
-        var html = "<div class='magicIcon'><img class='magictime " + options.magic + "' id='migic' src='" + options.iconUrl + "'/></div>";
-        var magicIcon = L.divIcon({
-            html: html,
+        var opts = {
+            html: "<div class='magicIcon'><img class='magictime " + options.magic + "' id='migic' src='" + options.iconUrl + "'/></div>",
             className: 'magicDiv',
-            popupAnchor: options.popupAnchor
-        });
+        };
+        var magicIconOpts = setOptions(opts, options);
+        var magicIcon = L.divIcon(magicIconOpts);
         return magicIcon;
     };
 
