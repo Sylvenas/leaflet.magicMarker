@@ -31,7 +31,9 @@ var magicMarker = new L.marker.magic([51.55, -0.09], {
 | Option          | Description              | Default Value  | Required    |
 | --------------- | ------------------------ | ---------------| ------------| 
 | iconUrl         | The URL to the icon image| null           |  yes        |
-| magic           | Animation type           | null           |  yes        | 
+| magic           | Animation type           | null           |  yes        |   
+
+ Other options inherited from leaflet [Icon](http://leafletjs.com/reference-1.0.2.html#icon)
 
 ## Leaflet Version     
 Requires Leaflet 1.0.2 or newer   
