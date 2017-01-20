@@ -27,7 +27,7 @@ var magicMarker = new L.marker.magic([51.55, -0.09], {
     magic: 'vanishIn'
 })  
 ```     
-##API(options)   
+##Options   
 | Option          | Description              | Default Value  | Required    |
 | --------------- | ------------------------ | ---------------| ------------| 
 | iconUrl         | The URL to the icon image| null           |  yes        |
