@@ -1,0 +1,9 @@
+.magicDiv{
+    height: 0;
+    width: 0;
+}
+.magicIcon{
+    position:relative;
+    top:-5px;
+    left:-16px;
+}

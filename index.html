@@ -29,7 +29,7 @@
 
         L.marker.magic([51.55, -0.09], {
             iconUrl: './img/magicIcon.png',
-            magic: 'twisterInDown',
+            magic: 'vanishIn',
             popupAnchor: [-6, -8]
         })
             .addTo(map)
@@ -57,7 +57,7 @@
                         popupAnchor: [-6, -8]
                     })
                         .addTo(map)
-                        .bindTooltip(magicType)
+                        .bindTooltip(magicType);
                 } else {
                     L.marker.magic([51.53, -0.35 + (i - 14) * 0.04], {
                         iconUrl: './img/magicIcon2.png',
@@ -65,7 +65,7 @@
                         popupAnchor: [-6, -8]
                     })
                         .addTo(map)
-                        .bindTooltip(magicType)
+                        .bindTooltip(magicType);
                 }
 
                 i++;
