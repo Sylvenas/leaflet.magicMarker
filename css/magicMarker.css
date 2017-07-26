@@ -7,3 +7,7 @@
     top:-5px;
     left:-16px;
 }
+.leaflet-div-icon{
+    background: transparent;
+    border:none;
+}

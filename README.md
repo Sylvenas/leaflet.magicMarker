@@ -3,7 +3,8 @@ Adding magical animation effect to a marker while loading.
 <div style="text-align:center" align="center">
   <img src="https://react-map.github.io/leaflet.magicMarker/Demo.gif" />
 </div>    
-##supported browsers    
+
+## supported browsers    
 Internet Explorer 11       
 Google Chrome     
 Safari    
@@ -27,19 +28,21 @@ var magicMarker = new L.marker.magic([51.55, -0.09], {
     magic: 'vanishIn'
 })  
 ```     
-##Options   
+##Options 
+
 | Option          | Description              | Default Value  | Required    |
-| --------------- | ------------------------ | ---------------| ------------| 
+| --------------- | ------------------------ | -------------- | ----------- | 
 | iconUrl         | The URL to the icon image| null           |  yes        |
 | magic           | Animation type           | null           |  yes        |   
 
- Other options inherited from leaflet [Icon](http://leafletjs.com/reference-1.0.2.html#icon)
+Other options inherited from leaflet [Icon](http://leafletjs.com/reference-1.0.2.html#icon)
 
 ## Leaflet Version     
 Requires Leaflet 1.0.2 or newer   
 
 ##Thanks   
 leaflet.magicMarker is base on [magic animations](https://github.com/miniMAC/magic).
+
 ## License   
 MIT.    
 

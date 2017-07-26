@@ -6,11 +6,20 @@
         return obj;
     };
     L.Icon.Magic = function (options) {
-        var opts = {
-            html: "<div class='magicIcon'><img class='magictime " + options.magic + "' id='migic' src='" + options.iconUrl + "'/></div>",
-            className: 'magicDiv',
-        };
+        if (options.iconUrl) {
+            var opts = {
+                html: "<div class='magicDiv'><div class='magictime " + options.magic + "'>" + options.html + "<img id='migic' src='" + options.iconUrl + "'/></div></div>",
+                // className: 'magicDiv',
+            };
+        } else {
+            var opts = {
+                html: "<div class='magicDiv'><div class='magictime " + options.magic + "'>" + options.html + "</div></div>",
+                // className: 'magicDiv',
+            };
+        }
+        delete options.html;
         var magicIconOpts = setOptions(opts, options);
+        console.log(magicIconOpts)
         var magicIcon = L.divIcon(magicIconOpts);
         return magicIcon;
     };
