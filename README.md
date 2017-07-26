@@ -10,10 +10,10 @@ Google Chrome
 Safari    
 Firefox        
 
-##Demo online   
+## Demo online   
 A demo is available on the Github Pages webpage for leaflet.magicMarker [Check out demo!](https://react-map.github.io/leaflet.magicMarker/)    
 
-##Usage     
+## Usage     
 1.Include the JavaScript file and css files located in ```\dist``` directory.   
 ```html
 <link href="./lib/magic.min.css" rel="stylesheet">
@@ -28,11 +28,11 @@ var magicMarker = new L.marker.magic([51.55, -0.09], {
     magic: 'vanishIn'
 })  
 ```     
-##Options 
+## Options 
 
 | Option          | Description              | Default Value  | Required    |
 | --------------- | ------------------------ | -------------- | ----------- | 
-| iconUrl         | The URL to the icon image| null           |  yes        |
+| iconUrl         | The URL to the icon image| null           |  no        |
 | magic           | Animation type           | null           |  yes        |   
 
 Other options inherited from leaflet [Icon](http://leafletjs.com/reference-1.0.2.html#icon)
@@ -40,7 +40,7 @@ Other options inherited from leaflet [Icon](http://leafletjs.com/reference-1.0.2
 ## Leaflet Version     
 Requires Leaflet 1.0.2 or newer   
 
-##Thanks   
+## Thanks   
 leaflet.magicMarker is base on [magic animations](https://github.com/miniMAC/magic).
 
 ## License   
