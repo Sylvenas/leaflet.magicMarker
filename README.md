@@ -11,7 +11,7 @@ Safari
 Firefox        
 
 ## Demo online   
-A demo is available on the Github Pages webpage for leaflet.magicMarker [Check out demo!](https://react-map.github.io/leaflet.magicMarker/)    
+A demo is available on the Github Pages webpage for leaflet.magicMarker [Check out demo!](https://sylvenas.github.io/leaflet.magicMarker/)    
 
 ## Usage     
 1.Include the JavaScript file and css files located in ```\dist``` directory.   
