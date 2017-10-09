@@ -1,7 +1,7 @@
 # leaflet.magicMarker
 Adding magical animation effect to a marker while loading.
 <div style="text-align:center" align="center">
-  <img src="https://react-map.github.io/leaflet.magicMarker/Demo.gif" />
+  <img src="https://sylvenas.github.io/leaflet.magicMarker/Demo.gif" />
 </div>    
 
 ## supported browsers    
